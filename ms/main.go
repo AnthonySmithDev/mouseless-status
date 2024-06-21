@@ -52,7 +52,7 @@ type Block struct {
 func defaultBlock() ([]byte, error) {
 	block := Block{
 		Icon:  "weather_thunder",
-		State: Warning,
+		State: Good,
 		Text:  Default,
 	}
 	bytes, err := json.Marshal(&block)
@@ -94,7 +94,7 @@ func read(path string) error {
 func write(path string, layer Layer) error {
 	block := Block{
 		Icon:  "weather_thunder",
-		State: Warning,
+		State: Good,
 		Text:  layer,
 	}
 

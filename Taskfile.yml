@@ -1,0 +1,23 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+
+  run:
+    cmds:
+      - go run ./ms
+
+  build:
+    cmds:
+      - mkdir -p ./tmp
+      - go build -o ./tmp ./ms
+
+  install:
+    cmds:
+      - go install ./ms
+
+  root:
+    deps: [build]
+    cmds:
+      - sudo mv ./tmp/ms /usr/local/bin/
